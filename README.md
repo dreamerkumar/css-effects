@@ -1,5 +1,23 @@
 # CssEffects
 
+Live Demo: https://css-effects-lemon.vercel.app/
+
+A collection of CSS text effects and animations built with Angular. This project serves as an interactive showcase of various CSS techniques, featuring effects such as:
+
+- Neon glow
+- Gradient text
+- Glitch effect
+- Wave animation
+- Typing animation
+- Text shadow
+- Text reveal
+- Rainbow colors
+- Fire effect
+- Matrix rain
+
+Each effect demonstrates the creative possibilities of CSS, providing examples of modern web animation techniques and styling capabilities. Feel free to explore the different effects and use them as inspiration for your own projects.
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
 ## Development server
