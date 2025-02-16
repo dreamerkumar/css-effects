@@ -18,6 +18,20 @@ interface NavItem {
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
   template: `
+    <header class="top-nav">
+      <div class="logo-section">
+        <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">CSS Effects</span>
+      </div>
+      <a href="https://rulecms.com" class="credit" target="_blank" rel="noopener">
+        Created with <span class="heart">♥</span> by the RuleCMS Team
+      </a>
+    </header>
+
     <div class="app-container" [class.nav-expanded]="isNavExpanded">
       <button class="nav-toggle" (click)="toggleNav()">
         <span class="menu-icon"></span>
@@ -48,6 +62,80 @@ interface NavItem {
     </div>
   `,
   styles: [`
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      color: #7000ff;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      letter-spacing: -0.02em;
+    }
+
+    .credit {
+      font-family: var(--font-primary);
+      font-size: 0.9rem;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .credit:hover {
+      color: #7000ff;
+    }
+
+    .heart {
+      color: #ff4081;
+      display: inline-block;
+      animation: heartbeat 1.5s ease infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .app-container {
+      padding-top: 64px;
+    }
+
+    .nav-toggle {
+      top: 76px;
+    }
+
+    .sidebar {
+      top: 64px;
+      height: calc(100vh - 64px);
+    }
+
     .app-container {
       display: flex;
       min-height: 100vh;
@@ -188,6 +276,18 @@ interface NavItem {
 
       .nav-expanded .sidebar {
         transform: translateX(0);
+      }
+
+      .top-nav {
+        padding: 0 1rem;
+      }
+
+      .credit {
+        font-size: 0.8rem;
+      }
+
+      .logo-text {
+        font-size: 1.2rem;
       }
     }
   `]
