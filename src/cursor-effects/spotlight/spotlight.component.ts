@@ -1,11 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-spotlight',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Cursor Effects'" path="/cursor-effects"></app-back-button>
     <div class="container">
       <h1>Spotlight Cursor Effect</h1>
       <p class="description">Cursor creates a spotlight effect</p>
