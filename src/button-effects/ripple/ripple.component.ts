@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-ripple',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Button Effects'" path="/button-effects"></app-back-button>
     <div class="container">
       <h1>Ripple Button Effect</h1>
       <p class="description">Material-style ripple animation on click</p>
