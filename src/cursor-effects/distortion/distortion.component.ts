@@ -1,10 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-distortion',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Cursor Effects'" path="/cursor-effects"></app-back-button>
     <div class="container">
       <h1>Distortion Cursor Effect</h1>
       <p class="description">Cursor distorts content as it moves</p>
@@ -78,8 +81,7 @@ import { CommonModule } from '@angular/common';
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-  `],
-  imports: [CommonModule]
+  `]
 })
 export class DistortionComponent implements AfterViewInit, OnDestroy {
   @ViewChild('distortionCanvas') canvasRef!: ElementRef<HTMLCanvasElement>;
