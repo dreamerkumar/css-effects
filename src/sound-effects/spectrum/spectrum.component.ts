@@ -1,11 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-spectrum',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Sound Effects'" path="/sound-effects"></app-back-button>
     <div class="container">
       <h1>Spectrum Analyzer Effect</h1>
       <p class="description">Detailed frequency spectrum analysis</p>
