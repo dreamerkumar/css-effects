@@ -1,9 +1,13 @@
 import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-parallax',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Card Effects'" path="/card-effects"></app-back-button>
     <div class="container">
       <h1>Parallax Card Effect</h1>
       <p class="description">Interactive 3D parallax effect that responds to mouse movement</p>
