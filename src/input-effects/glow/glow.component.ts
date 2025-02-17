@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-glow',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, BackButtonComponent, FormsModule],
   template: `
+    <app-back-button [text]="'Back to Input Effects'" path="/input-effects"></app-back-button>
     <div class="container">
       <h1>Glow Input Effect</h1>
       <p class="description">Input field with neon glow effect on focus</p>
