@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-elastic',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Transform Effects'" path="/transform-effects"></app-back-button>
     <div class="container">
       <h1>Elastic Transform Effect</h1>
       <p class="description">Spring and bounce animations</p>
