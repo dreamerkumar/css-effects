@@ -1,9 +1,13 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-tilt',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Hover Effects'" path="/hover-effects"></app-back-button>
     <div class="container">
       <h1>Tilt Hover Effect</h1>
       <p class="description">Elements that tilt based on mouse position</p>
