@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../shared/back-button.component';
 
 interface Effect {
   path: string;
@@ -20,11 +21,13 @@ interface SectionData {
 @Component({
   selector: 'app-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
     <div class="container" *ngIf="currentSection">
       <h1>{{currentSection.title}}</h1>
       <p class="description">{{currentSection.description}}</p>
+      
+      <app-back-button [text]="'Back to Home'" path="/"></app-back-button>
       
       <div class="card-grid">
         <div class="card" *ngFor="let effect of currentSection.effects" 
