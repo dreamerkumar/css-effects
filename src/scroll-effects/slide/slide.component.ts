@@ -1,9 +1,13 @@
 import { Component, ElementRef, HostListener, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-slide',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Scroll Effects'" path="/scroll-effects"></app-back-button>
     <div class="container">
       <h1>Slide Scroll Effect</h1>
       <p class="description">Elements that slide in from different directions</p>
