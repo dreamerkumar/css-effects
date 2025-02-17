@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-spinner',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Loading Effects'" path="/loading-effects"></app-back-button>
     <div class="container">
       <h1>Spinner Loading Effect</h1>
       <p class="description">Animated loading spinner with gradient effect</p>
