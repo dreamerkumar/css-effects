@@ -1,10 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-custom',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Cursor Effects'" path="/cursor-effects"></app-back-button>
     <div class="container">
       <h1>Custom Cursor Effect</h1>
       <p class="description">Custom cursor shapes and animations</p>
@@ -108,8 +111,7 @@ import { CommonModule } from '@angular/common';
       margin: 0;
       opacity: 0.8;
     }
-  `],
-  imports: [CommonModule]
+  `]
 })
 export class CustomComponent implements AfterViewInit, OnDestroy {
   @ViewChild('cursorDot') dotRef!: ElementRef<HTMLDivElement>;
