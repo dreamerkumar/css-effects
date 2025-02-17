@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-shake',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Input Effects'" path="/input-effects"></app-back-button>
     <div class="container">
       <h1>Shake Input Effect</h1>
       <p class="description">Input field with shake animation for validation</p>
