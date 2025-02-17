@@ -1,11 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-waveform',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Sound Effects'" path="/sound-effects"></app-back-button>
     <div class="container">
       <h1>Waveform Effect</h1>
       <p class="description">Oscilloscope-style audio visualization</p>
@@ -92,7 +94,7 @@ export class WaveformComponent implements AfterViewInit, OnDestroy {
 
   private audioContext: AudioContext | null = null;
   private analyser: AnalyserNode | null = null;
-public audioSource: MediaElementAudioSourceNode | null = null;
+  public audioSource: MediaElementAudioSourceNode | null = null;
   private audio: HTMLAudioElement | null = null;
   private animationFrame: number = 0;
   isPlaying: boolean = false;
