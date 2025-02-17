@@ -1,9 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-mesh',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Background Effects'" path="/background-effects"></app-back-button>
     <div class="container">
       <h1>Mesh Background Effect</h1>
       <p class="description">Interactive geometric mesh patterns</p>
