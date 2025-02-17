@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-patterns',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to SVG Effects'" path="/svg-effects"></app-back-button>
     <div class="container">
       <h1>SVG Patterns Effect</h1>
       <p class="description">Dynamic SVG pattern generation and animation</p>
