@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-hover',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Card Effects'" path="/card-effects"></app-back-button>
     <div class="container">
       <h1>Hover Card Effect</h1>
       <p class="description">Smooth elevation and transform effects on hover</p>
