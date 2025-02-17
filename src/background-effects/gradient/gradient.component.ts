@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-gradient',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Background Effects'" path="/background-effects"></app-back-button>
     <div class="container">
       <h1>Gradient Background Effect</h1>
       <p class="description">Animated gradient backgrounds with different patterns</p>
