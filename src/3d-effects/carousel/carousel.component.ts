@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 interface CarouselItem {
   title: string;
@@ -10,8 +11,9 @@ interface CarouselItem {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to 3D Effects'" path="/3d-effects"></app-back-button>
     <div class="container">
       <h1>3D Carousel Effect</h1>
       <p class="description">Rotating 3D carousel with perspective transforms</p>
