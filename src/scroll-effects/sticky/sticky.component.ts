@@ -1,11 +1,13 @@
 import { Component, ElementRef, HostListener, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-sticky',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Scroll Effects'" path="/scroll-effects"></app-back-button>
     <div class="container">
       <h1>Sticky Scroll Effect</h1>
       <p class="description">Elements that stick to viewport while scrolling</p>
