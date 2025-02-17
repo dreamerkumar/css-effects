@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-shadow',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Text Effects'" path="/text-effects"></app-back-button>
     <div class="container">
       <h1>3D Shadow Text Effect</h1>
       <p class="description">Text with dynamic 3D shadow effect and hover animation</p>
