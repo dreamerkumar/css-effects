@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../app/shared/back-button.component';
 
 @Component({
   selector: 'app-magnetic',
   standalone: true,
+  imports: [CommonModule, BackButtonComponent],
   template: `
+    <app-back-button [text]="'Back to Cursor Effects'" path="/cursor-effects"></app-back-button>
     <div class="container">
       <h1>Magnetic Cursor Effect</h1>
       <p class="description">Elements that attract the cursor</p>
@@ -63,8 +66,7 @@ import { CommonModule } from '@angular/common';
     .magnetic-button:hover {
       background: #5c00d2;
     }
-  `],
-  imports: [CommonModule]
+  `]
 })
 export class MagneticComponent {
   handleMagneticMove(event: MouseEvent) {
